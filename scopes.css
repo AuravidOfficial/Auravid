@@ -1,0 +1,234 @@
+/* --- LAYOUT GENERAL --- */
+.scopes-main {
+    padding: 32px 40px;
+}
+
+@media (max-width: 768px) {
+    .scopes-main { padding: 20px; }
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.glass-select {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* --- SECCIÓN DEL GRÁFICO SUPERIOR --- */
+.chart-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mitad gráfico, mitad leyenda */
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    margin-bottom: 40px;
+    min-height: 400px;
+}
+
+@media (max-width: 900px) {
+    .chart-section {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 20px;
+    }
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Texto flotante en el centro del Donut */
+.chart-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+}
+
+.total-label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+.total-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+}
+.total-unit {
+    display: block;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Leyenda Lateral */
+.legend-title {
+    font-size: 18px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.legend-item:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.legend-color {
+    width: 12px;
+    height: 40px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.legend-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.scope-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 2px;
+}
+.scope-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.legend-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+/* --- SECCIÓN DETALLADA (TARJETAS INFERIORES) --- */
+.section-divider-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 4px solid var(--primary);
+}
+
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.scope-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.scope-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.scope-badge {
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Colores específicos por Scope */
+.badge-s1 { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+.badge-s2 { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3); }
+.badge-s3 { background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
+
+.scope-total {
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Lista de items */
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 6px;
+    margin-top: 16px;
+}
+
+.bd-info span {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #f3f4f6;
+}
+.bd-info small {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+.bd-val {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Barras de progreso mini */
+.breakdown-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.breakdown-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+}
+.fill-s1 { background: #ef4444; }
+.fill-s2 { background: #3b82f6; }
+.fill-s3 { background: #22c55e; }

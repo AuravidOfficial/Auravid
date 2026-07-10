@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quarterly Reports - Auravid</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/quarterly.css">
+</head>
+<body class="dashboard-body">
+
+    <aside id="sidebar" class="sidebar-container">
+        <div class="sidebar-top">
+            <a href="index.html" class="auravid-logo-link" style="margin-bottom: 32px;">
+                <img src="img/auravidlogo.png" alt="Auravid Logo" class="auravid-logo-img" />
+            </a>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+                <a href="upload.html" class="nav-item"><i class="fas fa-file-invoice"></i> <span>Data Input</span></a>
+                <a href="scopes.html" class="nav-item"><i class="fas fa-project-diagram"></i> <span>Scope Breakdown</span></a>
+                <a href="aiinsights.html" class="nav-item"><i class="fas fa-robot"></i> <span>AI Insights</span></a>
+                <a href="quarterly.html" class="nav-item active"><i class="fas fa-file-pdf"></i> <span>Briefs</span></a>
+                <a href="reports.html" class="nav-item"><i class="fas fa-file-contract"></i> <span>Document History</span></a>
+                <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> <span>Settings</span></a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="user-profile">
+                <div id="user-avatar" class="avatar">--</div>
+                <div class="user-info">
+                    <p id="user-name" class="user-name-text">Loading...</p>
+                    <p id="user-role" class="user-role-text">User</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <header class="mobile-header">
+        <img src="img/auravidlogo.png" alt="Logo" class="mobile-logo" />
+        <button id="mobile-menu-btn" class="mobile-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main class="main-content quarterly-main">
+        
+        <header class="top-header">
+            <div class="header-text">
+                <h1 class="page-title">Quarterly Briefs</h1>
+                <p class="page-subtitle">Official AI-generated sustainability documents.</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-secondary" id="refresh-btn">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            
+            <div class="stats-grid">
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon icon-green"><i class="fas fa-check-circle"></i></div>
+                    <div>
+                        <span class="stat-label">Latest Generated</span>
+                        <h3 class="stat-value">Q4 2024</h3>
+                    </div>
+                </div>
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon icon-blue"><i class="fas fa-file-pdf"></i></div>
+                    <div>
+                        <span class="stat-label">Total Documents</span>
+                        <h3 class="stat-value" id="total-reports-count">0</h3>
+                    </div>
+                </div>
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon icon-purple"><i class="fas fa-calendar-alt"></i></div>
+                    <div>
+                        <span class="stat-label">Next Due Date</span>
+                        <h3 class="stat-value">April 15</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel table-panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Generated Documents</h2>
+                    
+                    <div class="filter-controls">
+                        <div class="custom-select-wrapper">
+                            <select id="year-filter" class="glass-select">
+                                <option value="all">All Years</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="reports-table">
+                        <thead>
+                            <tr>
+                                <th>Report Name</th>
+                                <th>Period</th>
+                                <th>Generated Date</th>
+                                <th>Status</th>
+                                <th>Emissions (tCO2e)</th>
+                                <th class="text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quarterly-table-body">
+                            <tr>
+                                <td colspan="6" class="text-center loading-state">
+                                    <i class="fas fa-circle-notch fa-spin"></i> Loading reports...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <span class="footer-note">Showing all generated reports for your organization.</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/quarterly.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userStr = localStorage.getItem("auravid-user");
+            if (userStr) {
+                const user = JSON.parse(userStr);
+                document.getElementById("user-name").textContent = user.name || user.email;
+                document.getElementById("user-role").textContent = user.role || "User";
+                
+                const initials = (user.name || user.email).substring(0, 2).toUpperCase();
+                document.getElementById("user-avatar").textContent = initials;
+            }
+        });
+    </script>
+</body>
+</html>

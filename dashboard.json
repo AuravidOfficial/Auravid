@@ -1,0 +1,39 @@
+{
+  "user_context": {
+    "current_period": "Q4 2025",
+    "system_status": "ONLINE",
+    "region": "SWEDEN CENTRAL"
+  },
+  "kpis": {
+    "total_emissions": {
+      "value": 1240,
+      "unit": "tCO2e",
+      "trend": -12,
+      "vs": "LY"
+    },
+    "csrd_readiness": {
+      "percentage": 85,
+      "status": "On Track"
+    },
+    "ai_confidence": {
+      "score": 0.94,
+      "status": "High"
+    }
+  },
+  "recommendations": [
+    {
+      "id": "rec_001",
+      "type": "IMPACT",
+      "level": "HIGH",
+      "title": "Switch Logistics Provider",
+      "description": "AI detected partner in Norrbotten has higher emission factors."
+    },
+    {
+      "id": "rec_002",
+      "type": "ACTION",
+      "level": "DATA MISSING",
+      "title": "Upload Electricity Bills",
+      "description": "Missing data for 3 facilities."
+    }
+  ]
+}

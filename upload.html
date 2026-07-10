@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Data - Auravid</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@azure/storage-blob@12.1.2/dist/azure-storage-blob.min.js"></script>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/upload.css">
+</head>
+<body>
+
+    <aside id="sidebar" class="sidebar-container">
+        <div class="sidebar-top">
+            <a href="index.html" class="auravid-logo-link" style="margin-bottom: 32px;">
+                <img src="img/auravidlogo.png" alt="Auravid Logo" class="auravid-logo-img" />
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <a href="upload.html" class="nav-item active"><i class="fas fa-file-invoice"></i> Data Input</a>
+                <a href="scopes.html" class="nav-item"><i class="fas fa-project-diagram"></i> Scope Breakdown</a>
+                <a href="aiinsights.html" class="nav-item"><i class="fas fa-robot"></i> AI Insights</a>
+                <a href="quarterly.html" class="nav-item"><i class="fas fa-file-pdf"></i> <span>Briefs</span></a>
+                <a href="reports.html" class="nav-item"><i class="fas fa-file-contract"></i> Document History</a>
+                <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="user-profile">
+                <div class="avatar">JD</div>
+                <div class="user-info">
+                    <p class="user-name-text">Juan Blanco</p>
+                    <p class="user-role-text">User</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="ambient-glow"></div>
+        <div class="content-wrapper">
+            
+            <section class="content-header">
+                <div>
+                    <h1 class="page-title">Data Input</h1>
+                    <p class="page-subtitle">Upload raw data for processing. Our <span class="purple-text">AI Engine</span> will auto-classify scopes.</p>
+                </div>
+            </section>
+
+            <div class="upload-grid">
+                <div class="upload-main-col">
+                    <div class="glass-panel" style="padding: 4px; margin-bottom: 24px;">
+                        <div id="drop-zone" class="upload-zone">
+                            <input type="file" id="file-input" hidden multiple>
+                            <div class="icon-circle"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <h3>Click to upload or drag and drop</h3>
+                            <p style="font-size: 13px; color: #555; margin-top: 4px;">PDF (Bills), CSV (Logs), or Excel</p>
+                            <div class="zone-badges">
+                                <span class="mono-badge">MAX: 50MB</span>
+                                <span class="mono-badge">SECURE: AES-256</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel form-panel">
+                        <div class="panel-header"><i class="fas fa-keyboard"></i> Manual Scope Context</div>
+                        <div class="form-row">
+                            <div class="field">
+                                <label>Data Source Type</label>
+                                <select id="source-type" class="custom-select">
+                                    <option value="energy">Energy Bills (Electricity/Heat)</option>
+                                    <option value="logistics">Logistics / Fleet Fuel</option>
+                                    <option value="procurement">Procurement (Spend-based)</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Facility / Region</label>
+                                <select id="facility-region" class="custom-select">
+                                    <option value="global">Global (All)</option>
+                                    <option value="hq">HQ - Stockholm</option>
+                                    <option value="factory-a">Factory A</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-side-col">
+                    <div class="glass-panel queue-panel">
+                        <div class="panel-header-flex">
+                            <h3 style="font-size: 14px;">Queue</h3>
+                            <span id="queue-count" class="status-pill">0 Active</span>
+                        </div>
+                        <div id="file-queue-list" class="queue-list"></div>
+                    </div>
+
+                    <div class="terminal-container">
+                        <p style="font-size: 10px; color: #444; margin-bottom: 8px; font-family: 'Fira Code';">SYSTEM OUTPUT</p>
+                        <div id="terminal-content" class="terminal-window"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/upload.js"></script>
+</body>
+</html>

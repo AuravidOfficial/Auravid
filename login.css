@@ -1,0 +1,268 @@
+:root {
+    --bg-color: #050505;
+    --primary: #22c55e;
+    --primary-hover: #4ade80;
+    --text-main: #ffffff;
+    --text-muted: #9ca3af;
+    --border: rgba(255, 255, 255, 0.08);
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.login-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Elimina la altura fija anterior de 64px para que se adapte al nuevo logo */
+    padding: 24px; 
+    background: #000;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-height: 70px;
+    width: auto;
+    object-contain: contain;
+    transform: scale(1.4);
+}
+
+.secure-tag {
+    font-size: 11px;
+    color: #4b5563;
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 0.05em;
+}
+
+/* MAIN */
+.login-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 64px;
+}
+
+.ambient-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 384px;
+    background: radial-gradient(circle at top, rgba(34, 197, 94, 0.05), transparent);
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+/* CARD */
+.login-container {
+    width: 100%;
+    max-width: 448px;
+    padding: 0 16px;
+    position: relative;
+    z-index: 10;
+}
+
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.login-title-box {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 4px;
+}
+
+.login-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* FORM */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.input-field {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox {
+    accent-color: var(--primary);
+}
+
+.forgot-link {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.forgot-link:hover {
+    color: var(--primary-hover);
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: black;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(6, 95, 70, 0.3);
+}
+
+.btn-auth:hover {
+    background-color: var(--primary-hover);
+}
+
+.error-banner {
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    color: #f87171;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-family: 'Fira Code', monospace;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+.login-footer {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 10px;
+    color: #4b5563;
+    font-family: 'Fira Code', monospace;
+    text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+    .secure-tag { display: none; }
+    .logo-img { transform: scale(1.2); }
+}
+
+
+
+
+
+
+
+
+
+/* --- ESTANDARIZACIÓN DE LOGO (Auravid) --- */
+
+/* 1. El enlace contenedor (<a>) */
+.auravid-logo-link {
+    display: inline-flex; /* Se ajusta al contenido, no estira */
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    /* Reseteamos márgenes para que la posición dependa del contenedor padre */
+    margin: 0; 
+    padding: 0;
+}
+
+/* 2. La imagen del logo (<img>) */
+.auravid-logo-img {
+    display: block;
+    width: auto;
+    height: 64px; /* Antes era 32px, ahora igualamos a dashboard */
+    object-fit: contain;
+}
+
+/* --- TAMAÑO EXACTO PARA ESCRITORIO (PC/Mac) --- */
+@media (min-width: 868px) {
+    .auravid-logo-img {
+        height: 100px; /* Antes era 48px. Prueba con 64px, 72px u 80px */
+    }
+}
+
+
+
+

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Auravid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    
+    <style>
+        /* Hace que la tarjeta del gráfico parezca un botón al pasar el mouse */
+        a.chart-box-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s;
+        }
+        a.chart-box-link:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+        }
+        .link-icon {
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+        a.chart-box-link:hover .link-icon {
+            opacity: 1;
+            color: #4ade80; /* Verde al hacer hover */
+        }
+    </style>
+</head>
+<body class="dashboard-body">
+
+    <aside id="sidebar" class="sidebar-container">
+        <div class="sidebar-top">
+            <a href="index.html" class="auravid-logo-link" style="margin-bottom: 32px;">
+                <img src="img/auravidlogo.png" alt="Auravid Logo" class="auravid-logo-img" />
+            </a>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item active"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+                <a href="upload.html" class="nav-item"><i class="fas fa-file-invoice"></i> <span>Data Input</span></a>
+                <a href="scopes.html" class="nav-item"><i class="fas fa-project-diagram"></i> <span>Scope Breakdown</span></a>
+                <a href="aiinsights.html" class="nav-item"><i class="fas fa-robot"></i> <span>AI Insights</span></a>
+                <a href="quarterly.html" class="nav-item"><i class="fas fa-file-pdf"></i> <span>Briefs</span></a>
+                <a href="reports.html" class="nav-item"><i class="fas fa-file-contract"></i> <span>Document History</span></a>
+                <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> <span>Settings</span></a>
+            </nav>
+            </div>
+
+        <div class="sidebar-bottom">
+            <div class="user-profile">
+                <div id="user-avatar" class="avatar">--</div>
+                <div class="user-info">
+                    <p id="user-name" class="user-name-text">Loading...</p>
+                    <p id="user-role" class="user-role-text">...</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <header class="mobile-header">
+        <img src="img/auravidlogo.png" alt="Logo" class="mobile-logo" />
+        <button id="mobile-menu-btn" class="mobile-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main class="main-content">
+        <div class="ambient-glow"></div>
+
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="header-text">
+                    <h1 class="page-title">Overview</h1>
+                    <p class="page-subtitle">Welcome back, <span id="welcome-name">User</span>. Sustainability posture for <span class="period-badge">Q4 2025</span>.</p>
+                </div>
+                <div class="header-actions">
+                    <a href="upload.html" class="btn btn-secondary" style="text-decoration: none;">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload Data
+                    </a>
+                    <button id="generate-brief-btn" class="btn btn-primary">
+                    <i class="fas fa-file-export"></i> Generate Brief
+                    </button>
+                </div>
+            </section>
+
+            <section class="kpi-grid">
+                <div class="kpi-card glass-panel group">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Total Emissions <i class="fas fa-info-circle"></i></span>
+                        <span class="trend-tag">-12% vs LY</span>
+                    </div>
+                    <div class="kpi-body">
+                        <div class="kpi-value-container">
+                            <span class="kpi-number">1,240</span>
+                            <span class="kpi-unit">tCO2e</span>
+                        </div>
+                        <div class="backend-overlay">
+                            <span class="data-source" style="font-size: 10px; color: #4ade80;">Updated: Just now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-header">
+                        <span class="kpi-label">CSRD Readiness</span>
+                        <i class="fas fa-check-circle icon-ready"></i>
+                    </div>
+                    <div class="kpi-progress-box">
+                        <div class="progress-circle">
+                            <svg viewBox="0 0 36 36">
+                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <span class="circle-text">85%</span>
+                        </div>
+                        <div class="progress-details">
+                            <span class="status-text">Status: <span class="text-blue">On Track</span></span>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-header">
+                        <span class="kpi-label">AI Data Confidence</span>
+                        <i class="fas fa-brain icon-ai animate-pulse"></i>
+                    </div>
+                    <div class="kpi-body-ai">
+                        <div style="text-align: center; margin-top: 10px;">
+                            <span style="font-size: 24px; font-weight: 700; color: white;">98.2%</span>
+                            <p style="font-size: 11px; color: #a855f7;">High Accuracy</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="charts-grid">
+                <div class="chart-box chart-large glass-panel">
+                    <h3 class="chart-title">Emissions Trend (YTD)</h3>
+                    
+                    <div style="position: relative; height: 300px; width: 100%;">
+                        <canvas id="emissionsChart"></canvas>
+                    </div>
+                </div>
+
+                <a href="scopes.html" class="chart-box glass-panel chart-box-link">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 class="chart-title" style="margin: 0;">Emission by Scope</h3>
+        <i class="fas fa-external-link-alt link-icon" style="font-size: 14px;"></i>
+    </div>
+    
+    <div style="position: relative; flex: 1; width: 100%; min-height: 0;">
+        <canvas id="scopeChart"></canvas>
+    </div>
+</a>
+            </section>
+
+            <section class="ai-insights-panel glass-panel">
+                <div class="insights-header">
+                    <div class="status-dot"></div>
+                    <h3 class="insights-title">AURAVID AI • RECOMMENDATIONS</h3>
+                    <span class="beta-tag">Beta</span>
+                </div>
+                <div class="recommendations-grid">
+                    <div class="rec-card impact-high">
+                        <div class="rec-content">
+                            <div class="rec-text-side">
+                                <span class="badge-impact">IMPACT: HIGH</span>
+                                <h4 class="rec-title">Switch Logistics Provider</h4>
+                                <p class="rec-desc">AI detected partner in Norrbotten has unusual emission factors.</p>
+                            </div>
+                            <div class="rec-action-icon">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-card data-missing">
+                        <div class="rec-content">
+                            <div class="rec-text-side">
+                                <span class="badge-warning">ACTION: DATA MISSING</span>
+                                <h4 class="rec-title">Upload Electricity Bills</h4>
+                                <p class="rec-desc">Missing data for 3 facilities. This is lowering your score.</p>
+                            </div>
+                            <div class="rec-action-icon hide-mobile">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="system-footer">
+                <p>SYSTEM STATUS: ONLINE • AZURE REGION: SWEDEN CENTRAL</p>
+            </footer>
+        </div>
+    </main>
+    <div id="brief-modal" class="modal-overlay hidden">
+    <div class="modal-content glass-panel">
+        <div class="modal-header">
+            <h3>Generate Sustainability Brief</h3>
+            <button id="close-modal-btn" class="close-icon"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <p class="modal-subtitle">Select the time range and format for your report.</p>
+
+        <div class="brief-options-grid">
+            <div class="brief-option-card" onclick="selectBrief('Quarterly')">
+                <div class="option-icon"><i class="fas fa-chart-pie"></i></div>
+                <div class="option-info">
+                    <h4>Quarterly Brief</h4>
+                    <p>Q4 2025 Performance & KPI Analysis</p>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </div>
+
+            <div class="brief-option-card" onclick="selectBrief('Annual')">
+                <div class="option-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="option-info">
+                    <h4>Annual Report</h4>
+                    <p>Full Year 2025 Comprehensive Review</p>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </div>
+
+            <div class="brief-option-card" onclick="selectBrief('Executive')">
+                <div class="option-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="option-info">
+                    <h4>Executive Summary</h4>
+                    <p>High-level insights for stakeholders</p>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

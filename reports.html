@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports & History - Auravid</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@azure/storage-blob@12.1.2/dist/azure-storage-blob.min.js"></script>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/reports.css">
+</head>
+<body class="dashboard-body">
+
+    <aside id="sidebar" class="sidebar-container">
+        <div class="sidebar-top">
+            <a href="index.html" class="auravid-logo-link" style="margin-bottom: 32px;">
+                <img src="img/auravidlogo.png" alt="Auravid Logo" class="auravid-logo-img" />
+            </a>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+                <a href="upload.html" class="nav-item"><i class="fas fa-file-invoice"></i> <span>Data Input</span></a>
+                <a href="scopes.html" class="nav-item"><i class="fas fa-project-diagram"></i> <span>Scope Breakdown</span></a>
+                <a href="aiinsights.html" class="nav-item"><i class="fas fa-robot"></i> <span>AI Insights</span></a>
+                <a href="quarterly.html" class="nav-item"><i class="fas fa-file-pdf"></i> <span>Briefs</span></a>
+                <a href="reports.html" class="nav-item active"><i class="fas fa-file-contract"></i> <span>Document History</span></a>
+                <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> <span>Settings</span></a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="user-profile">
+                <div id="user-avatar" class="avatar">--</div>
+                <div class="user-info">
+                    <p id="user-name" class="user-name-text">Loading...</p>
+                    <p id="user-role" class="user-role-text">user</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <header class="mobile-header">
+        <img src="img/auravidlogo.png" alt="Logo" class="mobile-logo" />
+        <button id="mobile-menu-btn" class="mobile-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main class="main-content">
+        <div class="ambient-glow"></div>
+
+        <div class="content-wrapper">
+            
+            <section class="content-header">
+                <div>
+                    <h1 class="page-title">File History</h1>
+                    <p class="page-subtitle">Archive of all uploaded raw data and generated reports.</p>
+                </div>
+                <div class="header-actions">
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="table-search" placeholder="Search files...">
+    </div>
+    
+    <div class="filter-wrapper" style="position: relative;">
+        <button id="filter-btn" class="btn btn-secondary">
+            <i class="fas fa-filter"></i> <span>All Statuses</span>
+        </button>
+        
+        <div id="filter-dropdown" class="filter-dropdown hidden">
+            <div class="filter-option active" data-status="All">All Statuses</div>
+            <div class="filter-option" data-status="Processed">Processed</div>
+            <div class="filter-option" data-status="Pending">Pending</div>
+            <div class="filter-option" data-status="Error">Error</div>
+        </div>
+    </div>
+</div>
+            </section>
+
+            <div class="glass-panel table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Upload Date</th>
+                            <th>Type</th>
+                            <th>Size</th>
+                            <th>Status</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-table-body">
+                        <tr>
+                            <td colspan="6" class="text-center" style="padding: 40px; color: #666;">
+                                <i class="fas fa-spinner fa-spin"></i> Loading history...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="table-footer">
+                    <span class="rows-count">Showing <span id="count-display">0</span> files</span>
+                    <div class="pagination-controls">
+                        <button class="page-btn disabled"><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/reports.js"></script>
+</body>
+</html>

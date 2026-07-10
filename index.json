@@ -1,0 +1,92 @@
+{
+  "translations": {
+    "nav": {
+      "logIn": { "en": "Log In", "sv": "Logga In" },
+      "bookDemo": { "en": "Book a demo", "sv": "Boka en demo" }
+    },
+    "hero": {
+      "badge": { "en": "CSRD Ready • AI Powered", "sv": "CSRD-redo • AI-driven" },
+      "title": {
+        "en": "Sustainability <br /> on <span class='text-gradient'>Autopilot.</span>",
+        "sv": "Hållbarhet <br /> på <span class='text-gradient'>autopilot.</span>"
+      },
+      "description": {
+        "en": "Auravid's AI collects, calculates, and reports your emissions. Zero consultancy hours needed.",
+        "sv": "Auravids AI samlar in, beräknar och rapporterar dina utsläpp. Inga konsulttimmar behövs."
+      },
+      "cta": { "en": "Start Free Pilot", "sv": "Starta kostnadsfri pilot" },
+      "card": {
+        "status": { "en": "CONNECTED", "sv": "ANSLUTEN" },
+        "totalEmissions": { "en": "TOTAL EMISSIONS", "sv": "Totala utsläpp" },
+        "confidence": { "en": "DATA CONFIDENCE", "sv": "Datatillförlitlighet" }
+      }
+    },
+    "problem": {
+      "glitchWords": [
+        { "en": "The", "sv": "Slutet" },
+        { "en": "End", "sv": "på" },
+        { "en": "Of", "sv": "manuell" },
+        { "en": "Manual", "sv": "rapportering." },
+        { "en": "Reporting.", "sv": "" }
+      ],
+      "cards": [
+        {
+          "title": { "en": "Excel Nightmare", "sv": "Excel-kaos" },
+          "desc": { "en": "Broken formulas, version conflicts, and lost files.", "sv": "Brutna formler, versionskonflikter och borttappade filer." }
+        },
+        {
+          "title": { "en": "Costly Consultants", "sv": "Dyra konsulter" },
+          "desc": { "en": "High hourly rates for simple data entry.", "sv": "Höga timpriser för enkel datainmatning." }
+        },
+        {
+          "title": { "en": "Human Error Risk", "sv": "Risk för mänskliga fel" },
+          "desc": { "en": "Manual entry leads to unverified, risky data gaps.", "sv": "Manuell inmatning skapar osäkra och riskfyllda dataluckor." }
+        }
+      ],
+      "footer": {
+        "en": "Auravid replaces the chaos with an AI-verified engine.",
+        "sv": "Auravid ersätter kaoset med en strömlinjeformad, AI-verifierad motor."
+      }
+    },
+    "solution": {
+      "title": { "en": "AI for Proactive Decarbonization", "sv": "AI för proaktiv minskning av utsläpp" },
+      "subtitle": { "en": "Automated compliance in 3 steps.", "sv": "Automatiserad regelefterlevnad i 3 steg." },
+      "steps": [
+        {
+          "title": { "en": "1. Connect", "sv": "1. Koppla" },
+          "desc": { "en": "Connects with your ERP & energy providers.", "sv": "Kopplas sömlöst till ert ERP och era energileverantörer." }
+        },
+        {
+          "title": { "en": "2. Calculate", "sv": "2. Beräkna" },
+          "desc": { "en": "AI maps data to GHG factors instantly.", "sv": "AI kopplar data till utsläppsfaktorer direkt." }
+        },
+        {
+          "title": { "en": "3. Report", "sv": "3. Rapportera" },
+          "desc": { "en": "Generate CSRD audit-ready PDFs.", "sv": "Skapa CSRD-granskningsklara PDF-rapporter." }
+        }
+      ]
+    },
+    "strategic": {
+      "title": {
+        "en": "Turn Sustainability Data into Your<br><span class='text-gradient'>Competitive Advantage.</span>",
+        "sv": "Gör hållbarhetsdata till er<br><span class='text-gradient'>konkurrensfördel.</span>"
+      },
+      "cardTitle": { "en": "Market Leader", "sv": "Marknadsledare" },
+      "cardDesc": { "en": "Your sustainability score is in the top 5%.", "sv": "Er hållbarhetsprofil ligger i topp 5 %." },
+      "footer": {
+        "en": "Predict future emissions and optimize supply chain logistics.",
+        "sv": "Prognostisera framtida utsläpp och optimera logistik i värdekedjan."
+      }
+    },
+    "cta": {
+      "title": { "en": "Ready?", "sv": "Redo?" },
+      "text": { "en": "Join the Swedish companies leading the transition.", "sv": "Anslut er till svenska bolag som leder omställningen." },
+      "button": { "en": "Book a free demo", "sv": "Boka en kostnadsfri demo" },
+      "badges": {
+        "gdpr": { "en": "GDPR", "sv": "GDPR" },
+        "hosted": { "en": "Hosted in SE", "sv": "Hostad i Sverige" },
+        "iso": { "en": "ISO 14064", "sv": "ISO 14064" }
+      }
+    }
+  }
+}

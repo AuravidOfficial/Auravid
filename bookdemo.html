@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Demo - Auravid</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <link rel="stylesheet" href="css/bookdemo.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="index.html" class="logo-link">
+            <img src="img/auravidlogo.png" alt="Auravid Logo" class="logo-img" />
+        </a>
+
+        <div class="nav-actions">
+            <button id="lang-toggle-btn" class="btn-lang">SV</button>
+            
+            <a href="index.html" class="btn-back">
+                <span data-en="Back to Home" data-sv="Tillbaka hem">Back to Home</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="background-blob"></div>
+
+        <div class="container hero-grid">
+            
+            <div class="text-column fade-in-up">
+                <div class="hero-header">
+                    <div class="live-badge">
+                        <i class="fas fa-video"></i>
+                        <span data-en="LIVE WALKTHROUGH" data-sv="LIVE GENOMGÅNG">LIVE WALKTHROUGH</span>
+                    </div>
+                    <h1 class="page-title" 
+                        data-en-html="See Auravid in <br /><span class='text-gradient'>Action.</span>"
+                        data-sv-html="Se Auravid i <br /><span class='text-gradient'>action.</span>">
+                        See Auravid in <br /><span class="text-gradient">Action.</span>
+                    </h1>
+                    <p class="page-subtitle"
+                        data-en="Book a 30-minute demo with our sustainability experts. No strings attached."
+                        data-sv="Boka en 30-minuters demo med våra hållbarhetsexperter. Inget köptvång.">
+                        Book a 30-minute demo with our sustainability experts. No strings attached.
+                    </p>
+                </div>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon icon-green"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h4 class="feature-title" data-en="Automated Data Collection" data-sv="Automatiserad datainsamling">Automated Data Collection</h4>
+                            <p class="feature-desc" data-en="Witness automatic data collection in seconds." data-sv="Bevittna automatisk datainsamling på sekunder.">Witness automatic data collection in seconds.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon icon-blue"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h4 class="feature-title" data-en="Real-time Dashboard" data-sv="Realtids-dashboard">Real-time Dashboard</h4>
+                            <p class="feature-desc" data-en="Preview the live analytics and insights platform." data-sv="Förhandsgranska den direktsända analys- och insiktsplattformen.">Preview the live analytics and insights platform.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon icon-purple"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h4 class="feature-title" data-en="Expert Consultation" data-sv="Expertkonsultation">Expert Consultation</h4>
+                            <p class="feature-desc" data-en="Get answers to your specific CSRD questions." data-sv="Få svar på dina specifika CSRD-frågor.">Get answers to your specific CSRD questions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mini-testimonial glass-card">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <p class="testimonial-quote" data-en="&quot;We help you stop calculating and start reducing.&quot;" data-sv="&quot;Vi hjälper er sluta räkna och börja minska.&quot;">"We help you stop calculating and start reducing."</p>
+                        <p class="testimonial-author">Juan Gonzalez-Blanco, Co-founder and CEO</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-column fade-in-up">
+                <div class="gradient-border-wrapper">
+                    <div class="form-card">
+                        
+                        <div class="form-header">
+                            <h3 class="form-title" data-en="Get Your Personalized Demo" data-sv="Få din personliga demo">Get Your Personalized Demo</h3>
+                            <p class="form-subtitle" data-en="Fill out the form below, and we'll be in touch shortly to schedule." data-sv="Fyll i formuläret nedan så kontaktar vi dig inom kort för att boka.">Fill out the form below, and we'll be in touch shortly to schedule.</p>
+                        </div>
+
+                        <form class="demo-form">
+                            <div class="input-group">
+                                <label for="name" class="form-label" data-en="Full Name" data-sv="Fullständigt namn">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="job-title" class="form-label" data-en="Job Title" data-sv="Yrkestitel">Job Title</label>
+                                <input type="text" id="job-title" name="job-title" class="form-input" placeholder="Sustainability Manager" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="company" class="form-label" data-en="Company Name" data-sv="Företagsnamn">Company Name</label>
+                                <input type="text" id="company" name="company" class="form-input" placeholder="Acme Inc." required>
+                            </div>
+                            <div class="input-group">
+                                <label for="email" class="form-label" data-en="Work Email" data-sv="E-postarbete">Work Email</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@acme.com" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="phone" class="form-label" data-en="Phone Number" data-sv="Telefonnummer">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+46 70 123 45 67">
+                            </div>
+
+                            <button type="submit" class="btn-primary">
+                                <span data-en="Request Demo" data-sv="Begär demo">Request Demo</span>
+                            </button>
+
+                            <p class="privacy-note" data-en="We respect your privacy. Your information is safe." data-sv="Vi respekterar din integritet. Din information är säker.">We respect your privacy. Your information is safe.</p>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        © 2025 Auravid AB
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let currentLang = "en";
+
+        function setLanguage(lang) {
+            document.querySelectorAll("[data-en][data-sv]").forEach(el => {
+                const value = el.dataset[lang];
+                if (value) {
+                    if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
+                        el.placeholder = value;
+                    } else {
+                        el.textContent = value;
+                    }
+                }
+            });
+            document.querySelectorAll("[data-en-html][data-sv-html]").forEach(el => {
+                const key = lang + "Html";
+                const value = el.dataset[key];
+                if (value) el.innerHTML = value;
+            });
+            document.documentElement.lang = lang === "sv" ? "sv" : "en";
+            currentLang = lang;
+        }
+
+        const langBtn = document.getElementById("lang-toggle-btn");
+        const savedLang = localStorage.getItem("auravid-lang");
+        const initialLang = savedLang === "sv" ? "sv" : "en";
+        setLanguage(initialLang);
+
+        if (langBtn) {
+            langBtn.textContent = initialLang === "en" ? "SV" : "EN";
+            langBtn.addEventListener("click", () => {
+                if (currentLang === "en") {
+                    setLanguage("sv");
+                    localStorage.setItem("auravid-lang", "sv");
+                    langBtn.textContent = "EN";
+                } else {
+                    setLanguage("en");
+                    localStorage.setItem("auravid-lang", "en");
+                    langBtn.textContent = "SV";
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>

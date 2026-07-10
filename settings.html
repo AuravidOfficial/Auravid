@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account | Auravid</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="dashboard-body">
+
+    <aside id="sidebar" class="sidebar-container">
+        <div class="sidebar-top">
+            <a href="index.html" class="auravid-logo-link" style="margin-bottom: 32px;">
+                <img src="img/auravidlogo.png" alt="Auravid Logo" class="auravid-logo-img" />
+            </a>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+                <a href="upload.html" class="nav-item"><i class="fas fa-file-invoice"></i> <span>Data Input</span></a>
+                <a href="scopes.html" class="nav-item"><i class="fas fa-project-diagram"></i> <span>SScope Breakdown</span></a>
+                <a href="aiinsights.html" class="nav-item"><i class="fas fa-robot"></i> <span>AI Insights</span></a>
+                <a href="quarterly.html" class="nav-item"><i class="fas fa-file-pdf"></i> <span>Briefs</span></a>
+                <a href="reports.html" class="nav-item"><i class="fas fa-file-contract"></i> <span>Document History</span></a>
+                <a href="settings.html" class="nav-item active"><i class="fas fa-cog"></i> <span>Settings</span></a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="user-profile">
+                <div class="avatar">JD</div>
+                <div class="user-info">
+                    <p class="user-name-text">Juan Blanco</p>
+                    <p class="user-role-text">User</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="ambient-glow"></div>
+
+        <div class="content-wrapper">
+            
+            <section class="content-header">
+                <div>
+                    <h1 class="page-title">My Account</h1>
+                    <p class="page-subtitle">Manage your personal details and preferences.</p>
+                </div>
+                <button class="btn btn-primary">
+                    <i class="fas fa-check"></i> Save Changes
+                </button>
+            </section>
+
+            <div class="settings-grid">
+
+                <div class="glass-panel full-width" style="padding: 32px;">
+                    <div class="section-title"><i class="fas fa-user"></i> Personal Profile</div>
+                    
+                    <div class="avatar-section">
+                        <div class="big-avatar">JD</div>
+                        <div>
+                            <button class="upload-btn">Upload New Photo</button>
+                            <p class="avatar-help-text">Recommended: 400x400px (JPG/PNG)</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>First Name</label>
+                            <input type="text" class="input-dark" value="Juan">
+                        </div>
+                        <div class="input-group">
+                            <label>Last Name</label>
+                            <input type="text" class="input-dark" value="Blanco">
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" class="input-dark" value="juan@auravid.com">
+                        </div>
+                        <div class="input-group">
+                            <label>Job Title</label>
+                            <input type="text" class="input-dark" value="Sustainability Manager">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 24px;">
+                    <div class="section-title"><i class="fas fa-globe"></i> Preferences</div>
+                    
+                    <div class="input-group" style="margin-bottom: 20px;">
+                        <label>Interface Language</label>
+                        <select class="input-dark pointer">
+                            <option value="en" selected>English (United Kingdom)</option>
+                            <option value="sv">Svenska (Sweden)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Timezone</label>
+                        <select class="input-dark pointer">
+                            <option value="cet" selected>Central European Time (Stockholm)</option>
+                            <option value="gmt">GMT (London)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 24px;">
+                    <div class="section-title"><i class="fas fa-bell"></i> Email Notifications</div>
+
+                    <div class="pref-row">
+                        <div class="pref-info">
+                            <h4>Weekly Summary</h4>
+                            <p>A PDF report sent every Monday.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="pref-row">
+                        <div class="pref-info">
+                            <h4>AI Anomalies</h4>
+                            <p>Get alerted when there is unusual emissions.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="pref-row">
+                        <div class="pref-info">
+                            <h4>Product Updates</h4>
+                            <p>News about new Auravid features.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="glass-panel full-width" style="padding: 32px;">
+                    <div class="section-title"><i class="fas fa-shield-alt"></i> Security</div>
+                    
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Current Password</label>
+                            <input type="password" class="input-dark" placeholder="••••••••">
+                        </div>
+                        <div class="input-group">
+                            <label>New Password</label>
+                            <input type="password" class="input-dark" placeholder="Enter new password">
+                        </div>
+                    </div>
+
+                    <div class="danger-zone">
+                        <h4 class="danger-title">Danger Zone</h4>
+                        <button class="btn-danger">Sign out of all devices</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

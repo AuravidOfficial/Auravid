@@ -1,0 +1,173 @@
+/* --- AI INSIGHTS PAGE STYLES --- */
+
+/* Contenedor del panel principal */
+.full-page-panel {
+    padding: 0;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header del Panel (Punto verde, titulo, beta) */
+.insights-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.insights-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    margin: 0;
+}
+
+.beta-tag {
+    background: rgba(168, 85, 247, 0.2);
+    color: #d8b4fe;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Grid de Tarjetas (en esta página las mostramos en 2 columnas si hay espacio) */
+.recommendations-grid-full {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Adaptable */
+    gap: 20px;
+}
+
+/* --- ESTILOS DE LA TARJETA (.rec-card) --- */
+.rec-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s, background 0.2s;
+    cursor: pointer;
+    border-left: 4px solid transparent; /* Línea de color a la izquierda */
+}
+
+.rec-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.rec-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.rec-text-side {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Variantes de Color (Borde izquierdo y hover) */
+.rec-card.impact-high { border-left-color: #a855f7; } /* Purple */
+.rec-card.data-missing { border-left-color: #f59e0b; } /* Orange */
+.rec-card.impact-medium { border-left-color: #3b82f6; } /* Blue */
+.rec-card.impact-low { border-left-color: #22c55e; } /* Green */
+
+/* Badges */
+.badge-impact {
+    align-self: flex-start;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(168, 85, 247, 0.15);
+    color: #d8b4fe;
+    letter-spacing: 0.5px;
+}
+
+.badge-warning {
+    align-self: flex-start;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(245, 158, 11, 0.15);
+    color: #fcd34d;
+    letter-spacing: 0.5px;
+}
+
+.badge-medium {
+    align-self: flex-start;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    letter-spacing: 0.5px;
+}
+
+.badge-low {
+    align-self: flex-start;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(34, 197, 94, 0.15);
+    color: #86efac;
+    letter-spacing: 0.5px;
+}
+
+/* Tipografía */
+.rec-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin: 4px 0 2px 0;
+}
+
+.rec-desc {
+    font-size: 13px;
+    color: #9ca3af;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Icono de flecha */
+.rec-action-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    flex-shrink: 0; /* Evita que se aplaste */
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@media (max-width: 768px) {
+    .recommendations-grid-full { grid-template-columns: 1fr; }
+}

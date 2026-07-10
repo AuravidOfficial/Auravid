@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@auravid.com",
+      "password": "auravid123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "user@auravid.com",
+      "password": "user123",
+      "role": "user"
+    }
+  ]
+}
